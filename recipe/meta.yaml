@@ -1,18 +1,18 @@
 {% set name = "overly" %}
-{% set version = "0.1.81" %}
+{% set version = "0.1.83" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 19c632229f5c9bf9d35f94141ed3f9075b67f965f822df1a07329ae195118a0a
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: fe4e2413be69646b947e8e9c300b9ad74cf704ad51fcfa7cfcdeef73577248f7
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -28,11 +28,11 @@ test:
     - overly
 
 about:
-  home: "https://github.com/theelous3/overly"
+  home: https://github.com/theelous3/overly
   license: MIT
   license_family: MIT
   license_file: LICENCE
-  summary: "overly - http client testing for hoomans"
+  summary: overly - http client testing for hoomans
   dev_url: https://github.com/theelous3/overly
 
 extra:
